@@ -9,7 +9,7 @@ public class Aplic {
     public static void main(String[] args) {
         int opcao, id;
         String titulo;
-        
+        double VMult;
         Scanner entrada = new Scanner(System.in);
     
         System.out.print("Digite o ID do livro: ");
@@ -17,9 +17,11 @@ public class Aplic {
         entrada.nextLine();
         System.out.print("Digite o título do livro: ");
         titulo = entrada.nextLine();
+        System.out.print("Digite o valor da multa diária: ");
+        VMult = entrada.nextInt();
         
         Livro objLivro = new Livro(id, titulo);
-        
+        objLivro.setValMultaDiaria(VMult);
       do{  
             System.out.println("\n1 - Consultar livro");
             System.out.println("2 - Emprestar livro");

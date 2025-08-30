@@ -12,7 +12,7 @@ public class Livro {
         identificacao = iden;
         titulo = tit;
         situacao = false; // sempre começa disponível
-        valMultaDiaria = 2.0; // exemplo de valor padrão por dia
+        
     }
     public void setValMultaDiaria(double VMult){
         valMultaDiaria = VMult;

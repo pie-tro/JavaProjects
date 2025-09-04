@@ -1,0 +1,64 @@
+package Conexao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.ResultSet;
+
+/**
+ *
+ * @author tigri
+ */
+public class PessoaDAO {
+    private Conexao conexao;
+    private Connection conn;
+    
+    public PessoaDAO(){
+        this.conexao = new Conexao();
+        this.conn = this.conexao.getConexao();
+    }
+    public void inserir (Pessoa pessoa){
+        String sql = "INSERT INTO pessoa (nome, sexo, idioma) VALUES (?,?,?);";
+        try{
+            PreparedStatement stmt = this.conn.prepareStatement(sql);
+            stmt.setString(1, pessoa.getNome());
+            stmt.setString(2, pessoa.getSexo());
+            stmt.setString(3, pessoa.getIdioma());
+            
+            stmt.execute();
+        }catch(SQLException ex){
+            System.out.println("Erro ao inserir pessoa"+ex.getMessage());
+        }
+    }
+    public Pessoa getPessoa(int id) 
+    {
+        String sql = "SELECT * FROM pessoa WHERE id = ?";
+        try 
+        {
+            PreparedStatement stmt = conn.prepareStatement(
+                sql,
+                ResultSet.TYPE_SCROLL_INSENSITIVE,
+                ResultSet.CONCUR_UPDATABLE
+            );
+            stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery(); // obtenho o retorno da consulta e armazeno no ResultSet
+            
+            Pessoa p = new Pessoa();
+            // Primeiramente, vamos posicionar o retorno da consulta (ResultSet) na primeira posição da consulta
+            // Em alguns casos, a consulta terá mais de um resultado de retorno
+            rs.first();
+            
+            p.setId(id);
+            p.setNome(rs.getString("nome"));
+            p.setSexo(rs.getString("sexo"));
+            p.setIdioma(rs.getString("idioma"));
+            
+            return p;
+        } 
+        catch (SQLException ex) 
+        {
+            System.out.println("Erro ao consultar pessoa: " + ex.getMessage());
+            return null;
+        }
+    }
+}

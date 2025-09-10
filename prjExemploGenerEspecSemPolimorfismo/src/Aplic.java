@@ -14,6 +14,7 @@ public class Aplic {
         System.out.println("Data nascimento: "+ objAlu.getDataNascimento());
         System.out.println("Mensalidade: "+ objAlu.getMensalidade());
         System.out.println("\n\n\n");
+       
         Professor objProf = new Professor(2020, "Maria Oliveira", "20/08/1980");
         
         objProf.setSalario(7500);

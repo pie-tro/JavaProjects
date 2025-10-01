@@ -4,6 +4,8 @@
  */
 package Conexao;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author tigri
@@ -28,16 +30,18 @@ public class EditExcludes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         NameTxb = new javax.swing.JTextField();
         IdTxb = new javax.swing.JTextField();
-        SexoTxb = new javax.swing.JTextField();
         IdiomaTxb = new javax.swing.JTextField();
         btn_Consultar = new javax.swing.JButton();
         btnAtualizar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        btnExcluir = new javax.swing.JButton();
+        rbMasc = new javax.swing.JRadioButton();
+        rbFem = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,12 +54,6 @@ public class EditExcludes extends javax.swing.JFrame {
         IdTxb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 IdTxbActionPerformed(evt);
-            }
-        });
-
-        SexoTxb.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SexoTxbActionPerformed(evt);
             }
         });
 
@@ -83,9 +81,25 @@ public class EditExcludes extends javax.swing.JFrame {
 
         jLabel2.setText("Nome:");
 
-        jLabel3.setText("Sexo:");
-
         jLabel4.setText("Idioma:");
+
+        btnExcluir.setText("Excluir");
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(rbMasc);
+        rbMasc.setText("Masculino");
+        rbMasc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbMascActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(rbFem);
+        rbFem.setText("Feminino");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -94,53 +108,59 @@ public class EditExcludes extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
+                        .addGap(31, 31, 31)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel4)
-                        .addGap(9, 9, 9)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(NameTxb, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
-                    .addComponent(SexoTxb)
-                    .addComponent(IdiomaTxb)
-                    .addComponent(IdTxb, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(45, 247, Short.MAX_VALUE)
+                        .addComponent(jLabel4)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnAtualizar)
-                    .addComponent(btn_Consultar))
-                .addGap(73, 73, 73))
+                    .addComponent(IdTxb, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(NameTxb, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(rbMasc, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(rbFem, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(IdiomaTxb, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnAtualizar)
+                            .addComponent(btn_Consultar)
+                            .addComponent(btnExcluir))))
+                .addContainerGap(231, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(68, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(IdTxb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NameTxb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SexoTxb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(IdiomaTxb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_Consultar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnAtualizar)
-                .addGap(9, 9, 9))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btn_Consultar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnAtualizar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnExcluir))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(IdTxb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))
+                        .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(NameTxb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(rbMasc)
+                            .addComponent(rbFem))
+                        .addGap(24, 24, 24)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(IdiomaTxb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4))))
+                .addContainerGap(146, Short.MAX_VALUE))
         );
 
         pack();
@@ -154,10 +174,6 @@ public class EditExcludes extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_IdTxbActionPerformed
 
-    private void SexoTxbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SexoTxbActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SexoTxbActionPerformed
-
     private void IdiomaTxbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdiomaTxbActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_IdiomaTxbActionPerformed
@@ -168,14 +184,17 @@ public class EditExcludes extends javax.swing.JFrame {
        
        Pessoa p = pDAO.getPessoa(idPessoa);
        if(p==null){
-           NameTxb.setText("");
-           SexoTxb.setText("");
-           IdiomaTxb.setText("");
-         
+          limparFormulario();
+           System.out.println("Pessoa não encontrada");
     }//GEN-LAST:event_btn_ConsultarActionPerformed
    else{
            NameTxb.setText(p.getNome());
-           SexoTxb.setText(p.getSexo());
+           if(p.getSexo().equals("M")){
+               rbMasc.setSelected(true);
+           }else{
+               rbFem.setSelected(true);
+           }
+           
            IdiomaTxb.setText(p.getIdioma());
        }
     }
@@ -183,19 +202,41 @@ public class EditExcludes extends javax.swing.JFrame {
     IdTxb.setText("");
     NameTxb.setText("");
     IdiomaTxb.setText("");
-    SexoTxb.setText("");
+    buttonGroup1.clearSelection();
     }
     private void btnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarActionPerformed
         Pessoa p = new Pessoa();
         p.setId(Integer.parseInt(IdTxb.getText()));
         p.setNome(NameTxb.getText());
-        p.setSexo(SexoTxb.getText());
         p.setIdioma(IdiomaTxb.getText());
         
+          String sexo = "";   
+        if(rbMasc.isSelected()){
+                sexo = "M";
+            }
+            else if(rbFem.isSelected()){
+                sexo = "F";
+            }
+        p.setSexo(sexo);
         PessoaDAO pDAO = new PessoaDAO();
         pDAO.editar(p);
         limparFormulario();
+        
+       
     }//GEN-LAST:event_btnAtualizarActionPerformed
+
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
+        int resposta = JOptionPane.showConfirmDialog(null,"Deseja realmente excluir?");
+        if(resposta==JOptionPane.YES_OPTION){
+            PessoaDAO pDAO = new PessoaDAO();
+            pDAO.excluir(Integer.parseInt(IdTxb.getText()));
+            limparFormulario();
+        }
+    }//GEN-LAST:event_btnExcluirActionPerformed
+
+    private void rbMascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbMascActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbMascActionPerformed
     
     /**
      * @param args the command line arguments
@@ -226,12 +267,14 @@ public class EditExcludes extends javax.swing.JFrame {
     private javax.swing.JTextField IdTxb;
     private javax.swing.JTextField IdiomaTxb;
     private javax.swing.JTextField NameTxb;
-    private javax.swing.JTextField SexoTxb;
     private javax.swing.JButton btnAtualizar;
+    private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btn_Consultar;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JRadioButton rbFem;
+    private javax.swing.JRadioButton rbMasc;
     // End of variables declaration//GEN-END:variables
 }

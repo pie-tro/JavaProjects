@@ -29,9 +29,8 @@ public class Notas extends javax.swing.JFrame {
      * Creates new form Notas
      */
     public Notas() {
-        initComponents(); // Método gerado pelo NetBeans para inicializar os componentes
+        initComponents(); 
         
-        // Chamando o método para carregar os dados
         carregarComboBoxClientes();
         carregarComboBoxProdutos();
     }
@@ -133,37 +132,35 @@ public class Notas extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnListar)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(btnVoltar)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnSalvar))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel3)
-                                        .addComponent(jLabel2)
-                                        .addComponent(jLabel4))
-                                    .addGap(38, 38, 38)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(cbProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(cbCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txbSubtotal, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(44, 44, 44))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel4))
+                        .addGap(38, 38, 38)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cbProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txbSubtotal, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(246, 246, 246)
-                        .addComponent(btnLimpar)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(btnVoltar)
+                        .addGap(124, 124, 124)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnLimpar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
+                            .addComponent(btnListar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnSalvar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(80, 80, 80)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -177,24 +174,21 @@ public class Notas extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
                             .addComponent(txbSubtotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(52, 52, 52)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnSalvar)
-                            .addComponent(btnVoltar))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSalvar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnListar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(btnLimpar)
-                .addContainerGap(39, Short.MAX_VALUE))
+                        .addComponent(btnListar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnLimpar)
+                            .addComponent(btnVoltar))))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
     private void carregarComboBoxClientes() {
-        // Lógica para preencher a combo box com os clientes do banco de dados
+        
         NotaDAO notaDAO = new NotaDAO();
         List<String> nomes = notaDAO.listarNomesClientes();
         
@@ -202,7 +196,7 @@ public class Notas extends javax.swing.JFrame {
             cbCliente.addItem(nome);
         }
     }  private void carregarComboBoxProdutos() {
-        // Lógica para preencher a combo box com os clientes do banco de dados
+       
         NotaDAO notaDAO = new NotaDAO();
         List<String> nomes = notaDAO.listarProdutos();
         
@@ -226,22 +220,18 @@ public class Notas extends javax.swing.JFrame {
     }//GEN-LAST:event_txbSubtotalActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-     // Instancia o objeto Nota Fiscal
+     
     NotasFiscais n = new NotasFiscais();
 
-    // Pega o nome do cliente e busca o ID
     String nomeCliente = (String) cbCliente.getSelectedItem();
     ClienteDAO clienteDAO = new ClienteDAO();
     int codCliente = clienteDAO.buscarIdPorNome(nomeCliente);
 
-    // Pega o nome do produto e busca o ID
     String nomeProduto = (String) cbProdutos.getSelectedItem();
     ProdutoDAO produtoDAO = new ProdutoDAO();
     int codProduto = produtoDAO.buscarIdPorNome(nomeProduto);
 
-    // Verifica se ambos, cliente e produto, foram encontrados
     if (codCliente != -1 && codProduto != -1) {
-        // Atribui os códigos à nota fiscal
         n.setCliente(codCliente);
         n.setIdProduto(codProduto);
 
@@ -249,12 +239,10 @@ public class Notas extends javax.swing.JFrame {
             double subtotal = Double.parseDouble(txbSubtotal.getText());
             n.setsubtotal(subtotal);
 
-            // Código para pegar a data atual do sistema
             java.util.Date dataAtual = new java.util.Date();
             java.sql.Timestamp dataTimestamp = new java.sql.Timestamp(dataAtual.getTime());
             n.setData(dataTimestamp);
 
-            // Instancia o NotaDAO e chama o método de inserção
             NotaDAO notaDAO = new NotaDAO();
             notaDAO.inserir(n);
 
@@ -275,12 +263,10 @@ public class Notas extends javax.swing.JFrame {
     txbSubtotal.setText("");
     }
     private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
-    // Pega o modelo da tabela e limpa as linhas existentes
+    
     DefaultTableModel modelo = (DefaultTableModel) tblNotas.getModel();
     modelo.setRowCount(0);
 
-    // Consulta SQL para buscar as notas fiscais
-    // Adapte o nome da tabela e das colunas conforme sua estrutura no banco de dados
     String sql = "SELECT codNota, codCliente, codProduto, subtotal, dataVenda FROM notasfiscais";
 
     try (
@@ -289,17 +275,16 @@ public class Notas extends javax.swing.JFrame {
         java.sql.ResultSet rs = stmt.executeQuery()
     ) {
         while (rs.next()) {
-            // Adiciona as informações da nota fiscal à tabela
             modelo.addRow(new Object[]{
                 rs.getInt("codNota"),
                 rs.getInt("codCliente"),
                 rs.getInt("codProduto"),
                 rs.getDouble("subtotal"),
-                rs.getTimestamp("dataVenda") // Use getTimestamp() para obter a data e a hora
+                rs.getTimestamp("dataVenda") 
             });
         }
     } catch (Exception e) {
-        // Exibe uma mensagem de erro em uma caixa de diálogo se algo der errado
+      
         JOptionPane.showMessageDialog(this, "Erro ao listar notas fiscais: " + e.getMessage());
     }
     }//GEN-LAST:event_btnListarActionPerformed

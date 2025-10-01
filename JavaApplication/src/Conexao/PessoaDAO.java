@@ -75,4 +75,15 @@ public class PessoaDAO {
                 System.out.println("Erro ao atualizar pessoa:" + ex.getMessage());
             }
         }
+      public void excluir (int id){
+          try{
+              String sql = "delete from pessoa WHERE id=?";
+              
+              PreparedStatement stmt = conn.prepareStatement(sql);
+              stmt.setInt(1,id);
+              stmt.execute();
+          }catch(SQLException ex){
+              System.out.println("Erro ao excluir pessoa"+ex.getMessage());
+          }
+      }
 }

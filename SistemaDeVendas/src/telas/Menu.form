@@ -50,7 +50,7 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="btnCProdutos" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btnCClientes" min="-2" max="-2" attributes="0"/>
+              <Component id="btnCClientes" min="-2" pref="23" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnNota" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="152" max="32767" attributes="0"/>

@@ -3,6 +3,7 @@ package telas;
 
 import telas.CadastroCliente;
 import telas.CadastroProduto;
+import telas.Notas;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -89,7 +90,7 @@ public class Menu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnCProdutos)
                 .addGap(18, 18, 18)
-                .addComponent(btnCClientes)
+                .addComponent(btnCClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnNota)
                 .addContainerGap(152, Short.MAX_VALUE))

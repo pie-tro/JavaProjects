@@ -4,6 +4,8 @@
  */
 package fatec.poo.view;
 
+import fatec.poo.model.PropostaSeguro;
+
 /**
  *
  * @author chaewon
@@ -208,6 +210,11 @@ public class GuiPropostaSegura extends javax.swing.JFrame {
         );
 
         btnMontar.setText("Montar");
+        btnMontar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMontarActionPerformed(evt);
+            }
+        });
 
         btnCalcular.setText("Calcular");
         btnCalcular.setEnabled(false);
@@ -218,6 +225,11 @@ public class GuiPropostaSegura extends javax.swing.JFrame {
         });
 
         btnSair.setText("Sair");
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairActionPerformed(evt);
+            }
+        });
 
         btnLimpar.setText("Limpar");
         btnLimpar.setEnabled(false);
@@ -312,6 +324,14 @@ public class GuiPropostaSegura extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCalcularActionPerformed
 
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+        dispose();
+    }//GEN-LAST:event_btnSairActionPerformed
+
+    private void btnMontarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMontarActionPerformed
+        objPropSeg = new PropostaSeguro(txtNome.getText(), );
+    }//GEN-LAST:event_btnMontarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -367,4 +387,5 @@ public class GuiPropostaSegura extends javax.swing.JFrame {
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtValorCarro;
     // End of variables declaration//GEN-END:variables
+    private PropostaSeguro objPropSeg;
 }

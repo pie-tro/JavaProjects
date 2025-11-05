@@ -329,7 +329,15 @@ public class GuiPropostaSegura extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnMontarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMontarActionPerformed
-        objPropSeg = new PropostaSeguro(txtNome.getText(), );
+        objPropSeg = new PropostaSeguro(txtNome.getText(), 
+                Double.parseDouble(txtValorCarro.getText()));
+        if (rdbMasculino.isSelected()){
+        objPropSeg.setSexo(true);
+        }else{
+        objPropSeg.setSexo(false);
+        }
+        
+        objPropSeg.setFaixaIdade(cbxFaixaIdade.getSelectedIndex());
     }//GEN-LAST:event_btnMontarActionPerformed
 
     /**

@@ -338,6 +338,11 @@ public class GuiPropostaSegura extends javax.swing.JFrame {
         }
         
         objPropSeg.setFaixaIdade(cbxFaixaIdade.getSelectedIndex());
+        objPropSeg.setPerfilMotorista(chkUnicoMotorista.isSelected());
+        objPropSeg.setPerfilCidade(chkDirigeCidade.isSelected());
+        
+        btnMontar.setEnabled(false);
+        btnCalcular.setEnabled(true);
     }//GEN-LAST:event_btnMontarActionPerformed
 
     /**
